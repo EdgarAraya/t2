@@ -6,6 +6,7 @@
 package poligonos;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *@author Edgar Araya
@@ -18,36 +19,78 @@ public class ListaPoligonos {
     public ListaPoligonos() {
         this.poligonos = new ArrayList();
     }
-    /*
+    
     public boolean agregarPoligono(Poligono p){
-        
+        if (!existe(p)){
+            this.poligonos.add(p);
+            return true;
+        }
+        return false;
     }
     
     public boolean existe(Poligono p){
         
+        return this.poligonos.contains(p);
+        
+        
+        
     }
     
-    public boolean buscarPorIndice(int indice){
+    public Poligono buscarPorIndice(int indice){
         
-        
+        return this.poligonos.get(indice);
     }
     
     public ListaPoligonos buscarPorRangoPerimetro(float inferior, float superior){
+        ListaPoligonos rango= new ListaPoligonos();
         
+        for (Poligono p:this.poligonos){
+            
+            if (p.perimetro()>=inferior && p.perimetro()<=superior){
+                rango.agregarPoligono(p);
+                
+            }
+        }
+        
+        return rango;  
     }
     
     public ListaPoligonos obtenerSubPoligonos(){
+        ListaPoligonos subpoligonos= new ListaPoligonos();
         
+        for (Poligono p: this.poligonos){
+            subpoligonos.agregarPoligono(p.getSubPoligono());
+        }
+        
+        return subpoligonos;
     }
     
     public int totalPoligonos(){
-        
+        return this.poligonos.size();
     }
     
     public ListaPoligonos obtenerExtremos(boolean menores){
+        Collections.sort(poligonos);
+        ListaPoligonos extremo= new ListaPoligonos();
+        float perimetro;
+        if (menores){
+            perimetro=this.poligonos.get(this.poligonos.size()-1).perimetro();
+        }
+        else{
+            perimetro=this.poligonos.get(0).perimetro(); 
+        }
+        for(Poligono p:this.poligonos){   
+                if (p.perimetro()==perimetro){
+                    extremo.poligonos.add(p);
+                }
+            }  
+        
+        return extremo;
+        
+        
         
     }
     
-    */
+    
     
 }

@@ -7,7 +7,7 @@ package poligonos;
  */
 
 /**
- *
+ *@author Edgar Araya
  * @author luisbenitez
  */
 public interface IDesplazable {

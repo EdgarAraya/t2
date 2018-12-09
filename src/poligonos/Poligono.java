@@ -12,7 +12,7 @@ import java.util.ArrayList;
  * @author luisbenitez
  * 
  */
-public class Poligono {
+public class Poligono implements IOperaciones, Comparable<Poligono> {
     
     private ArrayList<Recta> lineas;
     
@@ -49,9 +49,6 @@ public class Poligono {
         
         for(Recta c:this.lineas){
             perimetro+=c.getLongitud();
-            
-            
-            
         }
         
         return perimetro;
@@ -69,14 +66,27 @@ public class Poligono {
         
         return true;
     }
-    /*
+    
     public Poligono getSubPoligono(){
-        
-        
-        
-        
+        Poligono nuevo= new Poligono();
+        ArrayList<Punto> lista= new ArrayList();
+        for (Recta c: this.lineas){
+            Punto pto;
+            pto=c.getPuntoMedio();
+            lista.add(pto);  
+        }
+        for (int i =0; i < lista.size()-1;i++){
+            Recta rect = new Recta(lista.get(i),lista.get(i+1));
+            nuevo.addLinea(rect);
+            if (i==lista.size()-2){
+                rect = new Recta(lista.get(i+1),lista.get(0));
+                nuevo.addLinea(rect);
+            }
+  
+        }
+        return nuevo;
     }
-    */
+    
     public boolean equals(Object o){
         /*
         if (o instanceof Poligono){

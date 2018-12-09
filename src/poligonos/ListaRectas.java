@@ -8,7 +8,7 @@ package poligonos;
 import java.util.ArrayList;
 
 /**
- *
+ *@author Edgar Araya
  * @author luisbenitez
  */
 public class ListaRectas {

@@ -124,6 +124,21 @@ public class Main {
         System.out.println("comp:"+p3.equals(p2));
         System.out.println("cuad:"+p.equals(cuadrado));
         
+        Poligono sub= p.getSubPoligono();
+        
+        System.out.println(sub);
+        sub.desplazarEjeX((byte) (1));
+        System.out.println(sub);
+        sub.desplazarEjeY((byte) (1));
+        System.out.println(sub);
+        
+        
+        System.out.println(p);
+        p.desplazarEjeX((byte) 1);
+        System.out.println(p);
+        System.out.println("p sub:" +sub.perimetro()+"p orig: "+p.perimetro());
+        
+        
         
     }
     

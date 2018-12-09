@@ -90,21 +90,26 @@ public class Poligono {
             }
         
         */
+        
         if (o instanceof Poligono){
             Poligono p = (Poligono) o;
             if (p.lineas.size()==this.lineas.size()){
-                
-                
-                return true;
-            }
-            
-            
+                int iguales=0;
+                for(Recta c:this.lineas){
+                    //shit
+                    for (Recta c2:p.lineas){
+                        if (c.equals(c2)){
+                            iguales++;
+                            System.out.println(iguales);
+                        }
+  
+                    }
+                }
+                if (iguales==this.lineas.size()){
+                    return true;  
+                }
+            } 
         }
-        
-        
-        
-        
-        
         return false;
     }
     /*

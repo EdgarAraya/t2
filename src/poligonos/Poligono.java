@@ -23,11 +23,25 @@ public class Poligono {
     
     public boolean addLinea(Recta nueva){
         
-        return true;
+        if (this.lineas.isEmpty()){
+            this.lineas.add(nueva);
+            return true;
+        }
+        else if(!this.lineas.contains(nueva) && verificarLinea(nueva))
+        {
+            this.lineas.add(nueva);
+            return true;
+        }
+            
+            
+        return false;
     }
     
     public boolean verificarLinea(Recta candidata){
-        return true;
+        
+        return (this.lineas.get(this.lineas.size()-1).getPuntoFinal().equals(candidata.getPuntoInicial()));
+        
+        
     }
     
     public float perimetro(){
@@ -70,21 +84,35 @@ public class Poligono {
             
             for (Recta c:this.lineas){
                 if (c.getPuntoInicial())
-                
-                
+          
             }
-            
-            
-            
+    
             }
         
         */
+        if (o instanceof Poligono){
+            Poligono p = (Poligono) o;
+            if (p.lineas.size()==this.lineas.size()){
+                
+                
+                return true;
+            }
+            
+            
+        }
+        
+        
+        
+        
+        
         return false;
     }
+    /*
     public boolean equals(Poligono p){
         
         return true;
     }
+    */
     
     public void desplazarEjeX(byte delta){
         
@@ -115,9 +143,9 @@ public class Poligono {
     
     @Override
     public String toString(){
-        String datos="";
+        String datos="Rectas:\n";
         for(Recta c:this.lineas){
-            datos+="\n"+c.toString()+"\n";
+            datos+=c.toString()+"\n";
             
         }
         

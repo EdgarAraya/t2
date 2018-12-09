@@ -18,7 +18,7 @@ public class ListaPoligonos {
     public ListaPoligonos() {
         this.poligonos = new ArrayList();
     }
-    
+    /*
     public boolean agregarPoligono(Poligono p){
         
     }
@@ -48,6 +48,6 @@ public class ListaPoligonos {
         
     }
     
-    
+    */
     
 }

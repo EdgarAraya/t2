@@ -5,13 +5,30 @@
  */
 package poligonos;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 /**
  *
  * @author luisbenitez
  */
 public class Main {
     
-    public static void main(String[] args){
+    public static void main(String[] args) throws FileNotFoundException, IOException{
+        
+       // BufferedReader in = new BufferedReader(new FileReader("puntos.txt"));
+        
+        String content;
+
+        content = new String(Files.readAllBytes(Paths.get("puntos.txt")));
+        
+        System.out.println(content);
+        
+        
         
         
         Punto a1 = new Punto((byte)0,(byte)0);
@@ -87,6 +104,8 @@ public class Main {
         p3.addLinea(r1);
         
         
+        
+        
         System.out.println(p);
         
         p.addLinea(r1);
@@ -126,18 +145,39 @@ public class Main {
         
         Poligono sub= p.getSubPoligono();
         
+        /*
         System.out.println(sub);
         sub.desplazarEjeX((byte) (1));
         System.out.println(sub);
         sub.desplazarEjeY((byte) (1));
         System.out.println(sub);
-        
-        
+        */
+        /*
         System.out.println(p);
         p.desplazarEjeX((byte) 1);
         System.out.println(p);
         System.out.println("p sub:" +sub.perimetro()+"p orig: "+p.perimetro());
+        */
         
+        ListaPoligonos listp= new ListaPoligonos();
+            
+            
+        listp.agregarPoligono(p);
+        listp.agregarPoligono(p2);
+        listp.agregarPoligono(p3);
+        listp.agregarPoligono(cuadrado);
+        
+        System.out.println(listp);
+        
+        ListaPoligonos subp=listp.obtenerSubPoligonos();
+        
+        System.out.println(subp);
+        
+        ListaPoligonos extremo= listp.obtenerExtremos(false);
+        
+        System.out.println("sub"+extremo);
+        
+        System.out.println(listp);
         
         
     }

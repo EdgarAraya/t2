@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Poligono implements IOperaciones, Comparable<Poligono> {
     
     private ArrayList<Recta> lineas;
-    
+
     public Poligono(){
         
         this.lineas= new ArrayList();
@@ -55,9 +55,11 @@ public class Poligono implements IOperaciones, Comparable<Poligono> {
     }
     
     public boolean esRegular(){
-        float largo=this.lineas.get(0).getLongitud();
+        if (this==null) return false;
+        
+        float largo;
         for(Recta c:this.lineas){
-            
+            largo=this.lineas.get(0).getLongitud();
             if (c.getLongitud()!=largo){
                 return false;
             }
@@ -158,11 +160,25 @@ public class Poligono implements IOperaciones, Comparable<Poligono> {
     
     @Override
     public String toString(){
-        String datos="Rectas:\n";
+        String datos="\nNumero de lados:"+this.lineas.size()+ "\nRectas:\n";
+        int i=1;
         for(Recta c:this.lineas){
             datos+=c.toString()+"\n";
             
         }
+        datos+="Perimetro: "+this.perimetro();
+        
+        
+        //datos+="Es Regular: " +(this.esRegular()? "Si":"No");
+            
+        datos+=" Es Regular: ";
+        
+        if(this.esRegular())
+            datos+="Si";
+        else
+            datos+="No";
+        
+        
         
         return datos;
     }

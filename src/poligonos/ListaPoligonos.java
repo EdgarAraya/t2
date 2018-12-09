@@ -91,6 +91,16 @@ public class ListaPoligonos {
         
     }
     
-    
+    public String toString(){
+        String datos="Poligonos en la lista:";
+        int i=1;
+        for(Poligono p:this.poligonos){
+            datos+="\n*Poligono "+i+"*";
+            datos+=p.toString();
+            i++;
+        }
+        return datos;
+        
+    }
     
 }

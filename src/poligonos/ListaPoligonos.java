@@ -103,4 +103,7 @@ public class ListaPoligonos {
         
     }
     
+    public int getSize(){
+        return poligonos.size();
+    }
 }

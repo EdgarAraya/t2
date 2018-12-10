@@ -47,10 +47,23 @@ public class Punto implements IDesplazable {
         return "("+this.x+","+this.y+")";
     }
     
-    public boolean equals(Punto p){
+    public boolean equals(Object o){
+        
+        if (o instanceof Punto){
+        Punto p= (Punto )o;
+        
         return this.x==p.x && this.y==p.y;
+        }
+        
+        return false;
     }
+    public boolean equals(Punto p){
+        
     
+        return this.x==p.x && this.y==p.y;
+     
+ 
+    }
     
     
 }

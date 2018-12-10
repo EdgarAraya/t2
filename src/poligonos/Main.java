@@ -179,6 +179,17 @@ public class Main {
         
         System.out.println(listp);
         
+        ListaPuntos listapuntos= new ListaPuntos();
+                
+        listapuntos.agregarPunto(f1);
+        listapuntos.agregarPunto(f2);
+        listapuntos.agregarPunto(f3);      
+        listapuntos.agregarPunto(f4);
+        listapuntos.agregarPunto(f5);
+        listapuntos.agregarPunto(f6);
+        
+        System.out.println(listapuntos);
+        
         
     }
     

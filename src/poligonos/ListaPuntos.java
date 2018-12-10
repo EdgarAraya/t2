@@ -19,13 +19,15 @@ public class ListaPuntos {
         this.puntos = new ArrayList();
     }
     
+    
     public boolean agregarPunto(Punto p){
-        for(Punto alguno:this.puntos){
-            if(alguno.getX()!=p.getX() || alguno.getY()!=p.getY()){
-                puntos.add(p);
-                return true;
-            }
-        } 
+        
+        if (!puntos.contains(p)){
+            puntos.add(p);
+            return true;
+        }
+        
+        
         return false;
     }
     
@@ -35,6 +37,21 @@ public class ListaPuntos {
     
     public Punto buscarPorIndice(int index){
         return puntos.get(index);
+    }
+    
+    @Override
+    public String toString(){
+        String datos="";
+        for (Punto p:puntos){
+            datos+=p.toString()+"\n";
+            
+        }
+        
+        return datos;
+    }
+    
+    public int getSize(){
+        return puntos.size();
     }
     
 }

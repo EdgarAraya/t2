@@ -9,46 +9,12 @@ package poligonos;
  *
  * @author Edgar-pc
  */
-public class JTest extends javax.swing.JFrame {
+public class JListaPoligonos extends javax.swing.JFrame {
 
     /**
-     * Creates new form JTest
+     * Creates new form JListaPoligonos
      */
-    private static JTest p;
-    
-    
-    public static JTest getInstance() {
-        if (p == null) {
-            p = new JTest();
-           
-            
-        }
-       
-        
-        return p;
-    }
-    /*
-    public void removeMinMaxClose(Component comp)
-  {
-    if(comp instanceof AbstractButton)
-    {
-      comp.getParent().remove(comp);
-    }
-    if (comp instanceof Container)
-    {
-      Component[] comps = ((Container)comp).getComponents();
-      for(int x = 0, y = comps.length; x < y; x++)
-      {
-        removeMinMaxClose(comps[x]);
-      }
-    }
-  }
-    
-    */
-    
-    
-    
-    public JTest() {
+    public JListaPoligonos() {
         initComponents();
     }
 
@@ -61,7 +27,7 @@ public class JTest extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -94,21 +60,20 @@ public class JTest extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JListaPoligonos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JListaPoligonos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JListaPoligonos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JListaPoligonos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JTest().setVisible(true);
+                new JListaPoligonos().setVisible(true);
             }
         });
     }

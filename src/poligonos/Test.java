@@ -14,6 +14,16 @@ public class Test extends javax.swing.JFrame {
     /**
      * Creates new form Test
      */
+    private static Test p;
+    
+    
+    public static Test getInstance() {
+        if (p == null) {
+            p = new Test();
+        }
+        return p;
+    }
+    
     public Test() {
         initComponents();
     }

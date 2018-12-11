@@ -31,10 +31,10 @@ class MyCustomFilter extends javax.swing.filechooser.FileFilter {
  *
  * @author Edgar-pc
  */
-public class Aplicacion extends javax.swing.JFrame {
+public class JAplicacion extends javax.swing.JFrame {
 
     /**
-     * Creates new form Aplicacion
+     * Creates new form JAplicacion
    
      */
     ListaPuntos listaDePuntos= new ListaPuntos();
@@ -54,7 +54,7 @@ public class Aplicacion extends javax.swing.JFrame {
     
     
     
-    public Aplicacion() {
+    public JAplicacion() {
         initComponents();
     }
 
@@ -516,7 +516,7 @@ public class Aplicacion extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-      Test.getInstance().setVisible(true);
+      JTest.getInstance().setVisible(true);
       
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -543,20 +543,21 @@ public class Aplicacion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Aplicacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JAplicacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Aplicacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JAplicacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Aplicacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JAplicacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Aplicacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JAplicacion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Aplicacion().setVisible(true);
+                new JAplicacion().setVisible(true);
             }
         });
     }

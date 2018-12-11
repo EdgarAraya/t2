@@ -9,22 +9,22 @@ package poligonos;
  *
  * @author Edgar-pc
  */
-public class Test extends javax.swing.JFrame {
+public class JTest extends javax.swing.JFrame {
 
     /**
-     * Creates new form Test
+     * Creates new form JTest
      */
-    private static Test p;
+    private static JTest p;
     
     
-    public static Test getInstance() {
+    public static JTest getInstance() {
         if (p == null) {
-            p = new Test();
+            p = new JTest();
         }
         return p;
     }
     
-    public Test() {
+    public JTest() {
         initComponents();
     }
 
@@ -70,20 +70,21 @@ public class Test extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Test.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JTest.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Test().setVisible(true);
+                new JTest().setVisible(true);
             }
         });
     }

@@ -37,8 +37,11 @@ public class JAplicacion extends javax.swing.JFrame {
      * Creates new form JAplicacion
    
      */
-    ListaPuntos listaDePuntos= new ListaPuntos();
-    ListaPoligonos listaDePoligonos= new ListaPoligonos();
+    public ListaPuntos listaDePuntos= new ListaPuntos();
+    public ListaPoligonos listaDePoligonos= new ListaPoligonos();
+    public ListaRectas listaDeRectas = new ListaRectas();
+    
+    
     String file;
     
     private static ArrayList<Punto> puntos;

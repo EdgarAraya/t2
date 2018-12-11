@@ -18,6 +18,10 @@ public class ListaPuntos {
     public ListaPuntos() {
         this.puntos = new ArrayList();
     }
+
+    public ArrayList<Punto> getPuntos() {
+        return puntos;
+    }
     
     
     public boolean agregarPunto(Punto p){

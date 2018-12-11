@@ -19,6 +19,42 @@ public class ListaRectas {
         this.rectas = new ArrayList();
     }
     
+    public boolean convertirARectas(ListaPuntos pt){
+        
+       // if(rectas.isEmpty()){
+            
+            for (int i =0; i < pt.getPuntos().size()-1;i++){
+                Recta rec = new Recta(pt.getPuntos().get(i),pt.getPuntos().get(i+1));
+                
+                if (!rectas.contains(new Recta(pt.getPuntos().get(i),pt.getPuntos().get(i+1))))
+                    rectas.add(rec);
+                
+                if(i==pt.getPuntos().size()-2){
+                    
+                     rectas.add(new Recta(pt.getPuntos().get(i),pt.getPuntos().get(0)));
+                    
+                }
+                
+                
+            }
+            
+            
+            return true;
+            
+            
+            
+            
+            
+        
+        //return false;
+        
+        
+        
+        
+    }
+    
+    
+    
     public void agregarRecta(Recta r){
         this.rectas.add(r);
     }
@@ -31,7 +67,19 @@ public class ListaRectas {
         return this.rectas.get(index);
     }
     
-    
+    public String toString(){
+        String datos="";
+        int i=1;
+        datos="Numero\tRecta\n";
+        for (Recta c:rectas){
+            
+            datos+=i+"\t"+c.toString()+"\n";
+            i++;
+        }
+        
+        return datos;
+        
+    }
     
     
     

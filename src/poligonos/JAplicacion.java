@@ -40,6 +40,8 @@ public class JAplicacion extends javax.swing.JFrame {
     public static ListaPuntos listaDePuntos= new ListaPuntos();
     public static ListaPoligonos listaDePoligonos= new ListaPoligonos();
     public static ListaRectas listaDeRectas = new ListaRectas();
+    public static boolean mayor ;
+    public static boolean rango;
     
     
     String file;
@@ -81,7 +83,7 @@ public class JAplicacion extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        jTextAreaConsola = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         jButtonMostrarLista = new javax.swing.JButton();
         jButtonMostrarPuntos = new javax.swing.JButton();
@@ -95,6 +97,7 @@ public class JAplicacion extends javax.swing.JFrame {
         jButtonRangoPerimetro = new javax.swing.JButton();
         jButtonColaterales = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        jToggleButton1 = new javax.swing.JToggleButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -154,12 +157,14 @@ public class JAplicacion extends javax.swing.JFrame {
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Controlador de Poligonos");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Consola", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        jTextAreaConsola.setColumns(20);
+        jTextAreaConsola.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaConsola);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -219,6 +224,11 @@ public class JAplicacion extends javax.swing.JFrame {
         jButtonListaSubPoligonos.setText("Obtener lista de Sub-Poligonos");
 
         jButtonMenorPerimetro.setText("Obtener Lista Menor Perimetros");
+        jButtonMenorPerimetro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMenorPerimetroActionPerformed(evt);
+            }
+        });
 
         jButtonMayorPerimetro.setText("Obtener Lista Mayor Perimetros");
         jButtonMayorPerimetro.addActionListener(new java.awt.event.ActionListener() {
@@ -230,6 +240,11 @@ public class JAplicacion extends javax.swing.JFrame {
         jButtonPoligonoPorIndice.setText("Mostrar Poligono por Ind.");
 
         jButtonRangoPerimetro.setText("Mostrar Poligono Rango Perimetro");
+        jButtonRangoPerimetro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRangoPerimetroActionPerformed(evt);
+            }
+        });
 
         jButtonColaterales.setText("Verificar Poligonos Colaterales");
 
@@ -316,6 +331,13 @@ public class JAplicacion extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jToggleButton1.setText("lista rectas");
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+
         jMenu1.setText("Puntos");
 
         jMenu3.setText("Cargar Puntos...");
@@ -352,11 +374,17 @@ public class JAplicacion extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(252, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jToggleButton1)
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(jToggleButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -371,7 +399,7 @@ public class JAplicacion extends javax.swing.JFrame {
         
         
         
-        jTextArea1.setText(listaDePoligonos.toString());
+        jTextAreaConsola.setText(listaDePoligonos.toString());
         
     }//GEN-LAST:event_jButtonMostrarListaActionPerformed
 
@@ -410,17 +438,6 @@ public class JAplicacion extends javax.swing.JFrame {
                 
             }
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         //listaDePoligonos.agregarPoligono(p);
         
     }//GEN-LAST:event_jMenuItemCargarPorDefectoActionPerformed
@@ -432,9 +449,6 @@ public class JAplicacion extends javax.swing.JFrame {
         File file = fileChooser.getSelectedFile();
         try {
           // What to do with the file, e.g. display it in a TextArea
-          
-          
-          
           try(FileReader fr = new FileReader(file.getAbsolutePath());
                 BufferedReader  br = new BufferedReader(fr)){
                 String sCurrentLine, aux = "";
@@ -453,7 +467,7 @@ public class JAplicacion extends javax.swing.JFrame {
                     
                     System.out.println(aux1[0]+","+aux1[1]);
                 }
-                jTextArea1.setText(aux);
+                jTextAreaConsola.setText(aux);
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -469,7 +483,7 @@ public class JAplicacion extends javax.swing.JFrame {
           
           
           
-          jTextArea1.read( new FileReader( file.getAbsolutePath() ), null );
+          jTextAreaConsola.read( new FileReader( file.getAbsolutePath() ), null );
         } catch (IOException ex) {
           System.out.println("problem accessing file"+file.getAbsolutePath());
         }
@@ -482,14 +496,14 @@ public class JAplicacion extends javax.swing.JFrame {
 
     private void jButtonMostrarPuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarPuntosActionPerformed
         // TODO add your handling code here:
-        jTextArea1.setText(listaDePuntos.toString());
+        jTextAreaConsola.setText(listaDePuntos.toString());
         
     }//GEN-LAST:event_jButtonMostrarPuntosActionPerformed
 
     private void jButtonCrearRectasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearRectasActionPerformed
         // TODO add your handling code here:
         
-        jFrame1.setVisible(true);
+        
         
         
     }//GEN-LAST:event_jButtonCrearRectasActionPerformed
@@ -504,15 +518,59 @@ public class JAplicacion extends javax.swing.JFrame {
 
     private void jButtonMayorPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMayorPerimetroActionPerformed
         // TODO add your handling code here:
+        
+        mayor=false;
+        JPerimetro.getInstance().setVisible(true);
     }//GEN-LAST:event_jButtonMayorPerimetroActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
-      JTest.getInstance().setVisible(true);
+        jTextAreaConsola.setText(""+listaDeRectas.convertirARectas(listaDePuntos));
+        
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
       
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButtonMenorPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenorPerimetroActionPerformed
+        // TODO add your handling code here:
+        mayor=true;
+        JPerimetro.getInstance().setVisible(true);
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jButtonMenorPerimetroActionPerformed
+
+    private void jButtonRangoPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRangoPerimetroActionPerformed
+        // TODO add your handling code here:
+        
+        JRango.getInstance().setVisible(true);
+        
+        
+        
+    }//GEN-LAST:event_jButtonRangoPerimetroActionPerformed
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+        
+        jTextAreaConsola.setText(listaDeRectas.toString());
+        
+        
+        
+        
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     
     
@@ -584,8 +642,9 @@ public class JAplicacion extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextArea jTextAreaConsola;
     private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

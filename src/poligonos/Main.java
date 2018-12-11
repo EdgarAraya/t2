@@ -14,8 +14,7 @@ import java.nio.file.Paths;
 
 /**
  *
- * @author luisbenitez jajajazz
- * @author luisbenitez jajaja ha
+ * @author luisbenitez jajaja hadgdgdgdgd
  */
 public class Main {
     

@@ -508,8 +508,7 @@ public class JAplicacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonMostrarPuntosActionPerformed
 
     private void jButtonCrearRectasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearRectasActionPerformed
-        // TODO add your handling code here:
-        
+        JCrearRectas.getinstance().setVisible(true);
         
         
         

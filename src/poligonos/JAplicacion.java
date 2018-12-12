@@ -45,6 +45,15 @@ public class JAplicacion extends javax.swing.JFrame {
     public static boolean rango;
     
     
+    private static JAplicacion p;
+
+    public static JAplicacion getInstance() {
+        if (p == null) {
+            p = new JAplicacion();  
+        }
+        return p;
+    }
+
     String file;
     
     private static ArrayList<Punto> puntos;

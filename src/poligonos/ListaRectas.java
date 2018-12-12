@@ -18,7 +18,7 @@ public class ListaRectas {
     public ListaRectas() {
         this.rectas = new ArrayList();
     }
-    
+    //Borrar
     public boolean convertirARectas(ListaPuntos pt){
         
        // if(rectas.isEmpty()){
@@ -58,8 +58,15 @@ public class ListaRectas {
     
     
     
-    public void agregarRecta(Recta r){
-        this.rectas.add(r);
+    public boolean agregarRecta(Recta r){
+        
+        if (!rectas.contains(r)){
+        
+             this.rectas.add(r);
+             return true;
+        
+        }
+        return false;
     }
     
     public int totalRectas(){

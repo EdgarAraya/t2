@@ -39,6 +39,7 @@ public class JAplicacion extends javax.swing.JFrame {
      */
     public static ListaPuntos listaDePuntos= new ListaPuntos();
     public static ListaPoligonos listaDePoligonos= new ListaPoligonos();
+    public static ListaPoligonos listaDeSubPoligonos= new ListaPoligonos();
     public static ListaRectas listaDeRectas = new ListaRectas();
     public static boolean mayor ;
     public static boolean rango;
@@ -103,7 +104,6 @@ public class JAplicacion extends javax.swing.JFrame {
         jMenu3 = new javax.swing.JMenu();
         jMenuItemCargarPuntos = new javax.swing.JMenuItem();
         jMenuItemCargarPorDefecto = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
 
         fileChooser.setDialogTitle("Ventana abierta");
         fileChooser.setFileFilter(new MyCustomFilter());
@@ -170,17 +170,13 @@ public class JAplicacion extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 11, Short.MAX_VALUE))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.TOP, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
@@ -315,9 +311,9 @@ public class JAplicacion extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(6, 6, 6)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(38, Short.MAX_VALUE))
         );
@@ -327,7 +323,7 @@ public class JAplicacion extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -362,9 +358,6 @@ public class JAplicacion extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
-
         setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -396,10 +389,21 @@ public class JAplicacion extends javax.swing.JFrame {
       
         //jDialog1.setVisible(true);
         
+        String sub="";
+        if (listaDeSubPoligonos.getSize()!=0){
+            sub="Lista de SubPoligonos:\n"+listaDeSubPoligonos;
+            
+        }
         
         
         
-        jTextAreaConsola.setText(listaDePoligonos.toString());
+        jTextAreaConsola.setText(listaDePoligonos.toString()+sub);
+        
+        
+        
+        
+        
+        
         
     }//GEN-LAST:event_jButtonMostrarListaActionPerformed
 
@@ -485,10 +489,13 @@ public class JAplicacion extends javax.swing.JFrame {
           
           jTextAreaConsola.read( new FileReader( file.getAbsolutePath() ), null );
         } catch (IOException ex) {
-          System.out.println("problem accessing file"+file.getAbsolutePath());
+          System.out.println("Problema accediendo archivo"+file.getAbsolutePath());
+          jTextAreaConsola.setText("Problema accediendo archivo"+file.getAbsolutePath());
+          
         }
     } else {
-        System.out.println("File access cancelled by user.");
+        System.out.println("Acceso de archivo cancelado por usuario");
+        jTextAreaConsola.setText("Acceso de archivo cancelado por usuario");
     }
         
         
@@ -514,6 +521,11 @@ public class JAplicacion extends javax.swing.JFrame {
 
     private void jButtonCrearSubPoligonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearSubPoligonoActionPerformed
         // TODO add your handling code here:
+        
+        JSubPoligono.getInstance().setVisible(true);
+        
+        
+        
     }//GEN-LAST:event_jButtonCrearSubPoligonoActionPerformed
 
     private void jButtonMayorPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMayorPerimetroActionPerformed
@@ -631,7 +643,6 @@ public class JAplicacion extends javax.swing.JFrame {
     private javax.swing.JFrame jFrame1;
     private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItemCargarPorDefecto;

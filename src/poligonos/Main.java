@@ -95,7 +95,7 @@ public class Main {
         
       
         Poligono p= new Poligono();
-        Poligono p2= new Poligono();
+        Poligono triangulo= new Poligono();
         Poligono p3= new Poligono();
         
         p3.addLinea(r2);
@@ -113,10 +113,10 @@ public class Main {
         p.addLinea(r3);
         p.addLinea(r4);
         
-        p2.addLinea(tr1);
-        p2.addLinea(tr2);
-        p2.addLinea(tr3);
-        p2.addLinea(r4);
+        triangulo.addLinea(tr1);
+        triangulo.addLinea(tr2);
+        triangulo.addLinea(tr3);
+        triangulo.addLinea(r4);
         
         Poligono cuadrado = new Poligono();
         
@@ -124,25 +124,7 @@ public class Main {
         cuadrado.addLinea(rt2);
         cuadrado.addLinea(rt3);
         cuadrado.addLinea(rt4);
-        
-        
-        System.out.println(p);
-        System.out.println(p2);
-        System.out.println(p.verificarLinea(r3));
-        
-        System.out.println(p.equals(p2));
-        
-        System.out.println(p);
-        System.out.println(p3);
-        
-        
-        
-        System.out.println(cuadrado);
-        
-        System.out.println("comp:"+p.equals(p3));
-        System.out.println("comp:"+p3.equals(p2));
-        System.out.println("cuad:"+p.equals(cuadrado));
-        
+
         Poligono sub= p.getSubPoligono();
         
         /*
@@ -163,22 +145,15 @@ public class Main {
             
             
         listp.agregarPoligono(p);
-        listp.agregarPoligono(p2);
+        listp.agregarPoligono(triangulo);
         listp.agregarPoligono(p3);
         listp.agregarPoligono(cuadrado);
         
-        System.out.println(listp);
         
         ListaPoligonos subp=listp.obtenerSubPoligonos();
         
-        System.out.println(subp);
-        
+
         ListaPoligonos extremo= listp.obtenerExtremos(false);
-        
-        System.out.println("sub"+extremo);
-        
-        System.out.println(listp);
-        
         ListaPuntos listapuntos= new ListaPuntos();
                 
         listapuntos.agregarPunto(f1);
@@ -188,8 +163,79 @@ public class Main {
         listapuntos.agregarPunto(f5);
         listapuntos.agregarPunto(f6);
         
-        System.out.println(listapuntos);
+        ListaRectas listaDeRectas = new ListaRectas();
         
+        
+        
+        
+        
+        ListaPuntos listaDePuntos= new ListaPuntos();
+        for (int i = 0; i < 3;i++){
+            for(int j=0; j < 3; j++){
+                Punto p1= new Punto((byte)i,(byte)j);
+                
+                listaDePuntos.agregarPunto(p1);
+                
+                
+                
+            }
+        }
+        System.out.println(listaDePuntos);
+        
+        
+        
+        
+        Punto cero = new Punto((byte)0,(byte)0);
+        Punto uno = new Punto((byte)0,(byte)1);
+        
+        Punto dos = new Punto((byte)0,(byte)1);
+        Punto tres = new Punto((byte)0,(byte)2);
+        Punto tresb = new Punto((byte)1,(byte)2);
+        
+        Recta test1 = new Recta(cero,uno);
+        Recta test2 = new Recta(dos,tres);
+        
+        
+        
+        Recta test2b = new Recta(dos,tresb);
+        
+        System.out.println(test1.calcularAngulo(test2));
+        
+        listaDeRectas.agregarRecta(test1);
+        listaDeRectas.agregarRecta(test2);
+        
+        
+        System.out.println(listaDeRectas);
+        
+        Poligono testPoligono= new Poligono();
+        
+        testPoligono.addLinea(test1);
+        testPoligono.addLinea(test2);
+        testPoligono.addLinea(test2b);
+        
+        System.out.println(testPoligono);
+                
+        
+        
+        System.out.println(cuadrado);
+        
+        System.out.println("cerrado cuadrado: "+cuadrado.esCerrado());
+                
+        System.out.println(testPoligono.esCerrado());
+        
+        cuadrado.addLinea(test2);
+        
+        
+        
+        System.out.println(cuadrado);
+        
+        
+        
+        System.out.println(triangulo);
+        System.out.println("triang cerrado: "+triangulo.esCerrado());
+        
+        
+        System.out.println(triangulo.addLinea(test1));
         
     }
     

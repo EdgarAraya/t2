@@ -24,10 +24,13 @@ public class ListaRectas {
        // if(rectas.isEmpty()){
             
             for (int i =0; i < pt.getPuntos().size()-1;i++){
-                Recta rec = new Recta(pt.getPuntos().get(i),pt.getPuntos().get(i+1));
+                Recta rec = new Recta(pt.getPuntos().get(i), pt.getPuntos().get(i+1));
                 
-                if (!rectas.contains(new Recta(pt.getPuntos().get(i),pt.getPuntos().get(i+1))))
+                if (!rectas.contains(rec)){
                     rectas.add(rec);
+                }
+                
+                
                 
                 if(i==pt.getPuntos().size()-2){
                     

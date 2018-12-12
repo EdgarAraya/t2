@@ -15,6 +15,7 @@ import java.util.ArrayList;
 public class Poligono implements IOperaciones, Comparable<Poligono> {
     
     private ArrayList<Recta> lineas;
+    private boolean cerrado=false;
 
     public Poligono(){
         
@@ -23,13 +24,22 @@ public class Poligono implements IOperaciones, Comparable<Poligono> {
     
     public boolean addLinea(Recta nueva){
         
+        
+ 
+        
         if (this.lineas.isEmpty()){
             this.lineas.add(nueva);
             return true;
         }
-        else if(!this.lineas.contains(nueva) && verificarLinea(nueva))
+        else if(!this.lineas.contains(nueva) && verificarLinea(nueva) && !cerrado)
         {
             this.lineas.add(nueva);
+            
+            cerrado=esCerrado();
+            
+            
+            
+            
             return true;
         }
             
@@ -39,7 +49,8 @@ public class Poligono implements IOperaciones, Comparable<Poligono> {
     
     public boolean verificarLinea(Recta candidata){
         
-        return (this.lineas.get(this.lineas.size()-1).getPuntoFinal().equals(candidata.getPuntoInicial()));
+        return (this.lineas.get(this.lineas.size()-1).getPuntoFinal().equals(candidata.getPuntoInicial()) &&
+                this.lineas.get(this.lineas.size()-1).calcularAngulo(candidata)!=180);
         
         
     }
@@ -197,8 +208,11 @@ public class Poligono implements IOperaciones, Comparable<Poligono> {
     }
     
     
-    
-    
-    
-    
+    public boolean esCerrado(){
+        
+        return this.lineas.get(0).getPuntoInicial().equals(this.lineas.get(this.lineas.size()-1).getPuntoFinal());
+           
+
+    }
+
 }

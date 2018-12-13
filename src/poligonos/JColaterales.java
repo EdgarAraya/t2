@@ -59,6 +59,7 @@ public class JColaterales extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPoligono2 = new javax.swing.JComboBox<>();
         jColaterales = new javax.swing.JTextField();
+        jProbar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -81,7 +82,7 @@ public class JColaterales extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
+                .addComponent(jScrollPane2))
         );
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Poligono", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
@@ -100,7 +101,7 @@ public class JColaterales extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 178, Short.MAX_VALUE))
         );
 
         jPoligono1.addActionListener(new java.awt.event.ActionListener() {
@@ -115,6 +116,13 @@ public class JColaterales extends javax.swing.JFrame {
         jPoligono2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPoligono2ActionPerformed(evt);
+            }
+        });
+
+        jProbar.setText("Probar");
+        jProbar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jProbarActionPerformed(evt);
             }
         });
 
@@ -134,8 +142,10 @@ public class JColaterales extends javax.swing.JFrame {
                         .addComponent(jPoligono1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jColaterales)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jProbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jColaterales)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(49, 49, 49)
                         .addComponent(jPoligono2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(24, Short.MAX_VALUE))
@@ -150,11 +160,13 @@ public class JColaterales extends javax.swing.JFrame {
                     .addComponent(jPoligono2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jColaterales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jProbar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(49, 49, 49))
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -163,7 +175,7 @@ public class JColaterales extends javax.swing.JFrame {
     private void jPoligono2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPoligono2ActionPerformed
         // TODO add your handling code here:
         
-        jConsolaPoligono.setText(listaDePoligonos.getPoligonos().get(jPoligono2.getSelectedIndex()).toString());
+        jConsolaPoligono2.setText(listaDePoligonos.getPoligonos().get(jPoligono2.getSelectedIndex()).toString());
         
         
         
@@ -176,6 +188,13 @@ public class JColaterales extends javax.swing.JFrame {
         jConsolaPoligono.setText(listaDePoligonos.getPoligonos().get(jPoligono1.getSelectedIndex()).toString());
         
         
+        
+        
+        
+    }//GEN-LAST:event_jPoligono1ActionPerformed
+
+    private void jProbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jProbarActionPerformed
+        // TODO add your handling code here:
         if (listaDePoligonos.getPoligonos().get(jPoligono1.getSelectedIndex()).sonColaterales(listaDePoligonos.getPoligonos().get(jPoligono2.getSelectedIndex()))){
             
             jColaterales.setText("Si");
@@ -186,7 +205,8 @@ public class JColaterales extends javax.swing.JFrame {
         }
         
         
-    }//GEN-LAST:event_jPoligono1ActionPerformed
+        
+    }//GEN-LAST:event_jProbarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,6 +252,7 @@ public class JColaterales extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JComboBox<String> jPoligono1;
     private javax.swing.JComboBox<String> jPoligono2;
+    private javax.swing.JButton jProbar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables

@@ -286,6 +286,7 @@ public class JCrearPoligono extends javax.swing.JFrame {
             poligono= new Poligono();
 
             jConsola.setText("Poligono reiniciado");
+            jPoligonosCargados.setText("Esperando nueva recta");
 
         }else{
             
@@ -298,11 +299,21 @@ public class JCrearPoligono extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        //Achtung
+        jRectaInicial.removeAllItems();
+        
         cargado=true;
          for(int i=0; i< listaDeRectas.totalRectas();i++){
+             
+            
+             
             jRectaInicial.addItem(listaDeRectas.getRectas().get(i).toString());
            // jRectaFinal.addItem(listaDeRectas.getRectas().get(i).toString());
         }
+         
+         
+         
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed

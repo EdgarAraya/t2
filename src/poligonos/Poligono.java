@@ -65,6 +65,7 @@ public class Poligono implements IOperaciones, Comparable<Poligono> {
         return perimetro;
     }
     
+    @Override
     public boolean esRegular(){
         if (this==null) return false;
         
@@ -123,7 +124,7 @@ public class Poligono implements IOperaciones, Comparable<Poligono> {
                     for (Recta c2:p.lineas){
                         if (c.equals(c2)){
                             iguales++;
-                            System.out.println(iguales);
+                            
                         }
   
                     }
@@ -182,14 +183,17 @@ public class Poligono implements IOperaciones, Comparable<Poligono> {
         
         //datos+="Es Regular: " +(this.esRegular()? "Si":"No");
             
-        datos+=" Es Regular: ";
-        
-        if(this.esRegular())
-            datos+="Si";
-        else
-            datos+="No";
         
         
+        if(this.esCerrado()){
+            datos+=" Es Regular: ";
+
+            if(this.esRegular())
+                datos+="Si";
+            else
+                datos+="No";
+        
+        }
         
         return datos;
     }

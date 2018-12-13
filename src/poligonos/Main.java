@@ -201,7 +201,7 @@ public class Main {
         
         System.out.println(test1.calcularAngulo(test2));
         
-        listaDeRectas.agregarRecta(test1);
+        //listaDeRectas.agregarRecta(test1);
         listaDeRectas.agregarRecta(test2);
         
         

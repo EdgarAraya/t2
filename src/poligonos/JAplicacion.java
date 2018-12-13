@@ -609,11 +609,19 @@ public class JAplicacion extends javax.swing.JFrame {
 
     private void jButtonColateralesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonColateralesActionPerformed
         // TODO add your handling code here:
-        JColaterales.getInstance().getjPoligono1().removeAllItems();
+        JColaterales.getInstance().getjPoligono1().removeAllItems();//fix out of bounds
         for (int i = 0; i < listaDePoligonos.totalPoligonos();i++){
            
            JColaterales.getInstance().getjPoligono1().addItem("Poligono "+(i+1));
         }
+        
+        
+        JColaterales.getInstance().getjPoligono2().removeAllItems();//fix out of bounds
+        for (int i = 0; i < listaDePoligonos.totalPoligonos();i++){
+           
+           JColaterales.getInstance().getjPoligono2().addItem("Poligono "+(i+1));
+        }
+        
         
         JColaterales.getInstance().setVisible(true);
         

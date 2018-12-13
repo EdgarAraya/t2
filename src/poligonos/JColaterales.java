@@ -54,11 +54,11 @@ public class JColaterales extends javax.swing.JFrame {
         jConsolaPoligono = new javax.swing.JTextArea();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jConsolaSubPoligono = new javax.swing.JTextArea();
+        jConsolaPoligono2 = new javax.swing.JTextArea();
         jPoligono1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jPoligono2 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        jColaterales = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -84,11 +84,11 @@ public class JColaterales extends javax.swing.JFrame {
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 124, Short.MAX_VALUE))
         );
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sub-Poligono", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Poligono", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
-        jConsolaSubPoligono.setColumns(20);
-        jConsolaSubPoligono.setRows(5);
-        jScrollPane1.setViewportView(jConsolaSubPoligono);
+        jConsolaPoligono2.setColumns(20);
+        jConsolaPoligono2.setRows(5);
+        jScrollPane1.setViewportView(jConsolaPoligono2);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -134,7 +134,7 @@ public class JColaterales extends javax.swing.JFrame {
                         .addComponent(jPoligono1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1)
+                            .addComponent(jColaterales)
                             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(49, 49, 49)
                         .addComponent(jPoligono2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -149,7 +149,7 @@ public class JColaterales extends javax.swing.JFrame {
                     .addComponent(jLabel1)
                     .addComponent(jPoligono2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jColaterales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -162,6 +162,12 @@ public class JColaterales extends javax.swing.JFrame {
 
     private void jPoligono2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPoligono2ActionPerformed
         // TODO add your handling code here:
+        
+        jConsolaPoligono.setText(listaDePoligonos.getPoligonos().get(jPoligono2.getSelectedIndex()).toString());
+        
+        
+        
+        
     }//GEN-LAST:event_jPoligono2ActionPerformed
 
     private void jPoligono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPoligono1ActionPerformed
@@ -170,7 +176,14 @@ public class JColaterales extends javax.swing.JFrame {
         jConsolaPoligono.setText(listaDePoligonos.getPoligonos().get(jPoligono1.getSelectedIndex()).toString());
         
         
-        
+        if (listaDePoligonos.getPoligonos().get(jPoligono1.getSelectedIndex()).sonColaterales(listaDePoligonos.getPoligonos().get(jPoligono2.getSelectedIndex()))){
+            
+            jColaterales.setText("Si");
+            
+            
+        }else{
+            jColaterales.setText("No");
+        }
         
         
     }//GEN-LAST:event_jPoligono1ActionPerformed
@@ -211,8 +224,9 @@ public class JColaterales extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField jColaterales;
     private javax.swing.JTextArea jConsolaPoligono;
-    private javax.swing.JTextArea jConsolaSubPoligono;
+    private javax.swing.JTextArea jConsolaPoligono2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -220,6 +234,5 @@ public class JColaterales extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jPoligono2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,6 +15,10 @@ public class ListaRectas {
     
     private ArrayList<Recta>rectas;
 
+    
+    
+    
+    
     public ListaRectas() {
         this.rectas = new ArrayList();
     }
@@ -43,24 +47,23 @@ public class ListaRectas {
             
             
             return true;
-            
-            
-            
-            
-            
-        
+
         //return false;
-        
-        
-        
-        
+
     }
+
+    public ArrayList<Recta> getRectas() {
+        return rectas;
+    }
+    
+    
+    
     
     
     
     public boolean agregarRecta(Recta r){
         
-        if (!rectas.contains(r)){
+        if (!rectas.contains(r) && !r.getPuntoInicial().equals(r.getPuntoFinal())){
         
              this.rectas.add(r);
              return true;

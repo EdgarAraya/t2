@@ -97,9 +97,16 @@ public class Recta implements IDesplazable {
        this.puntoFinal.desplazarEjeY(delta);
     }
     
-    public boolean equals(Recta otra){
-      return this.puntoInicial.getX()==otra.puntoInicial.getX() && this.puntoInicial.getY()==otra.puntoInicial.getY() && 
+    public boolean equals(Object o){
+        
+        if (o instanceof Recta){
+            Recta otra = (Recta) o;
+            
+            return this.puntoInicial.getX()==otra.puntoInicial.getX() && this.puntoInicial.getY()==otra.puntoInicial.getY() && 
               this.puntoFinal.getX()==otra.puntoFinal.getX() && this.puntoFinal.getY()==otra.puntoFinal.getY();
+      
+        }
+        return false;
     }
     
     

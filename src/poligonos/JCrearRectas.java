@@ -17,7 +17,7 @@ public class JCrearRectas extends javax.swing.JFrame {
     /**
      * Creates new form JCrearRectas
      */
-    
+    private static boolean cargado=false;
     private static JCrearRectas p;
     
     public static JCrearRectas getinstance(){
@@ -170,36 +170,43 @@ public class JCrearRectas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCargarRectasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarRectasActionPerformed
-        for(int i=0; i< listaDePuntos.getSize();i++){
-            jComboPuntoInicial.addItem(listaDePuntos.getPuntos().get(i).toString());
-            jComboPuntoFinal.addItem(listaDePuntos.getPuntos().get(i).toString());
+        if(!cargado){
+            cargado=true;
+            jConsola.setText("Puntos cargados con exito");
+            
+            
+            for(int i=0; i< listaDePuntos.getSize();i++){
+                jComboPuntoInicial.addItem(listaDePuntos.getPuntos().get(i).toString());
+                jComboPuntoFinal.addItem(listaDePuntos.getPuntos().get(i).toString());
+            }
         }
     }//GEN-LAST:event_jButtonCargarRectasActionPerformed
 
     private void jButtonCrearRectasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearRectasActionPerformed
        
         
-        int n = jComboPuntoInicial.getSelectedIndex();
-        int n2 =jComboPuntoFinal.getSelectedIndex();
-        
-        
-        
-        
-        Recta uno = new Recta(listaDePuntos.getPuntos().get(n),listaDePuntos.getPuntos().get(n2));
-        System.out.println(n);
-        System.out.println(n2);
-        System.out.println(uno);
-        
-        if(listaDeRectas.agregarRecta(uno)){
-            jConsola.setText("Recta "+uno.toString()+" agregada con exito.");
+        if (listaDePuntos.getSize()!=0){
+            
+            int n = jComboPuntoInicial.getSelectedIndex();
+            int n2 =jComboPuntoFinal.getSelectedIndex();
+            Recta uno = new Recta(listaDePuntos.getPuntos().get(n),listaDePuntos.getPuntos().get(n2));
+
+            if(listaDeRectas.agregarRecta(uno)){
+                jConsola.setText("Recta "+uno.toString()+" agregada con exito.");
+            }
+            else{
+                jConsola.setText("Recta no se puede agregar");
+
+
+            }
         }
         else{
-            jConsola.setText("Recta no se puede agregar");
+            
+            jConsola.setText("No hay puntos cargados.");
+            
             
             
         }
-        
-        
         
         
         

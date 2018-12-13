@@ -525,6 +525,13 @@ public class JAplicacion extends javax.swing.JFrame {
 
     private void jButtonCrearPoligonosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearPoligonosActionPerformed
         // TODO add your handling code here:
+        
+        
+        
+        
+        JCrearPoligono.getInstance().setVisible(true);
+        
+        
     }//GEN-LAST:event_jButtonCrearPoligonosActionPerformed
 
     private void jButtonCrearSubPoligonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearSubPoligonoActionPerformed

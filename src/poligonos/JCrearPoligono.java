@@ -5,6 +5,7 @@
  */
 package poligonos;
 
+import static poligonos.JAplicacion.listaDePoligonos;
 import static poligonos.JAplicacion.listaDeRectas;
 
 /**
@@ -21,6 +22,8 @@ public class JCrearPoligono extends javax.swing.JFrame {
      * 
      * 
      */
+    
+    private static Poligono poligono=new Poligono();
     
     private static boolean cargado=false;
     
@@ -215,9 +218,32 @@ public class JCrearPoligono extends javax.swing.JFrame {
 
 
 
-            if(nuevo.addLinea(cand)){
+            if(poligono.addLinea(cand)){
                     jConsola.setText("Recta " +cand.toString()+ "agregada al poligono");
-                
+                    jPoligonosCargados.setText(poligono.toString());
+                    
+                    
+                    
+                    
+                    
+                    if(poligono.esCerrado()){//Si se cerro, cancelar
+                        
+                        if (listaDePoligonos.existe(poligono)){
+                            jConsola.setText("El poligono ya existe en la coleccion, se reiniciara la creacion del poligono...");
+                            jPoligonosCargados.setText(poligono.toString()+"\nEl poligono esta cerrado.\n"
+                                    + "Este poligono se encuentra en la coleccion");
+                            poligono= new Poligono();
+                        }
+                        else{
+                        
+                        listaDePoligonos.agregarPoligono(poligono);
+                         jPoligonosCargados.setText(poligono.toString()+"\nEl poligono esta cerrado.");
+                         jConsola.setText("Poligono creado con exito, ingrese nuevas rectas para crear nuevo poligono");
+                        poligono= new Poligono();
+                        
+                        }
+                    }
+                    
 
             }
             else{
@@ -243,6 +269,18 @@ public class JCrearPoligono extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        if (cargado){
+            poligono= new Poligono();
+
+            jConsola.setText("Poligono reiniciado");
+
+        }else{
+            
+            jConsola.setText("No hay rectas cargadas");
+            
+            
+        }
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed

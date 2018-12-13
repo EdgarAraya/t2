@@ -170,7 +170,7 @@ public class JCrearRectas extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonCargarRectasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarRectasActionPerformed
-        if(!cargado){
+        if(!cargado && listaDePuntos.getSize()!=0){  // agregar en JAplicacion validacion para cargado si se cambian los puntos cargados.
             cargado=true;
             jConsola.setText("Puntos cargados con exito");
             
@@ -180,6 +180,13 @@ public class JCrearRectas extends javax.swing.JFrame {
                 jComboPuntoFinal.addItem(listaDePuntos.getPuntos().get(i).toString());
             }
         }
+        else if(listaDePuntos.getSize()==0){
+             jConsola.setText("No existen puntos a cargar.");
+        }
+        
+        
+        
+        
     }//GEN-LAST:event_jButtonCargarRectasActionPerformed
 
     private void jButtonCrearRectasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearRectasActionPerformed

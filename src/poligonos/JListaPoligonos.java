@@ -160,7 +160,7 @@ public class JListaPoligonos extends javax.swing.JFrame {
         // TODO add your handling code here:
         String sub="";
         if (listaDeSubPoligonos.getSize()!=0){
-            sub="Lista de SubPoligonos:\n"+listaDeSubPoligonos;
+            sub="\nLista de SubPoligonos:\n"+listaDeSubPoligonos;
             
         }
 

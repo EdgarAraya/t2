@@ -44,6 +44,9 @@ public class JAplicacion extends javax.swing.JFrame {
     public static boolean mayor ;
     public static boolean rango;
     
+    //
+   
+            
     
     private static JAplicacion p;
 
@@ -606,10 +609,10 @@ public class JAplicacion extends javax.swing.JFrame {
 
     private void jButtonColateralesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonColateralesActionPerformed
         // TODO add your handling code here:
-        
+        JColaterales.getInstance().getjPoligono1().removeAllItems();
         for (int i = 0; i < listaDePoligonos.totalPoligonos();i++){
-            System.out.println("la");
-           JColaterales.getInstance().getjPoligono1().addItem("Poligono "+i);
+           
+           JColaterales.getInstance().getjPoligono1().addItem("Poligono "+(i+1));
         }
         
         JColaterales.getInstance().setVisible(true);

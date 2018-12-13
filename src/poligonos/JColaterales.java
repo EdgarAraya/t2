@@ -60,7 +60,7 @@ public class JColaterales extends javax.swing.JFrame {
         jPoligono2 = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Poligono", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
@@ -102,6 +102,12 @@ public class JColaterales extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1))
         );
+
+        jPoligono1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPoligono1ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setText("Es colateral con?");
@@ -157,6 +163,17 @@ public class JColaterales extends javax.swing.JFrame {
     private void jPoligono2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPoligono2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jPoligono2ActionPerformed
+
+    private void jPoligono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPoligono1ActionPerformed
+        // TODO add your handling code here:
+        
+        jConsolaPoligono.setText(listaDePoligonos.getPoligonos().get(jPoligono1.getSelectedIndex()).toString());
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jPoligono1ActionPerformed
 
     /**
      * @param args the command line arguments

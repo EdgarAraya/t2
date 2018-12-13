@@ -16,6 +16,15 @@ public class ListaPoligonos {
     
     private ArrayList<Poligono> poligonos;
 
+    public ArrayList<Poligono> getPoligonos() {
+        return poligonos;
+    }
+
+    
+    
+    
+    
+    
     public ListaPoligonos() {
         this.poligonos = new ArrayList();
     }

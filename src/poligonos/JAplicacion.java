@@ -252,6 +252,11 @@ public class JAplicacion extends javax.swing.JFrame {
         });
 
         jButtonColaterales.setText("Verificar Poligonos Colaterales");
+        jButtonColaterales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonColateralesActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Mostrar wea");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -598,6 +603,26 @@ public class JAplicacion extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jButtonColateralesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonColateralesActionPerformed
+        // TODO add your handling code here:
+        
+        for (int i = 0; i < listaDePoligonos.totalPoligonos();i++){
+            System.out.println("la");
+           JColaterales.getInstance().getjPoligono1().addItem("Poligono "+i);
+        }
+        
+        JColaterales.getInstance().setVisible(true);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jButtonColateralesActionPerformed
 
     
     

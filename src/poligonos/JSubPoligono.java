@@ -23,6 +23,11 @@ public class JSubPoligono extends javax.swing.JFrame {
         if (p==null){
             p = new JSubPoligono();
         }
+        
+        
+        
+        
+        
         return p;
         
         

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *@author  Edgar Araya
- * @author luisbenitez
+ * @author Luis Benitez
  * 
  */
 public class Poligono implements IOperaciones, Comparable<Poligono> {

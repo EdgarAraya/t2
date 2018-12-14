@@ -87,6 +87,7 @@
                       </Group>
                   </Group>
               </Group>
+              <Component id="jLabel3" alignment="0" pref="288" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
@@ -104,7 +105,9 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton2" linkSize="3" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="203" max="32767" attributes="0"/>
+                  <EmptySpace pref="134" max="32767" attributes="0"/>
+                  <Component id="jLabel3" min="-2" pref="91" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jButton1" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -158,6 +161,16 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JLabel" name="jLabel3">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="11" style="2"/>
+            </Property>
+            <Property name="horizontalAlignment" type="int" value="0"/>
+            <Property name="text" type="java.lang.String" value="&lt;html&gt;Tip: Si en el proceso de crear un poligono se da cuenta que&lt;br&gt; falta una recta para continuar el poligono, puede volver al &lt;br&gt; menu principal y crear la recta que necesita.&lt;br&gt;&#xa;El poligono queda guardado :)&lt;/html&gt;"/>
+            <Property name="horizontalTextPosition" type="int" value="10"/>
+          </Properties>
+        </Component>
       </SubComponents>
     </Container>
     <Container class="javax.swing.JPanel" name="jPanel2">
@@ -182,7 +195,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jScrollPane1" alignment="0" pref="335" max="32767" attributes="0"/>
+              <Component id="jScrollPane1" alignment="0" pref="363" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>
@@ -223,7 +236,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jScrollPane2" alignment="0" pref="335" max="32767" attributes="0"/>
+              <Component id="jScrollPane2" alignment="0" pref="363" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>

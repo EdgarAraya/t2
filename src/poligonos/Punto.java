@@ -8,7 +8,7 @@ package poligonos;
 
 /**
  *@author Edgar Araya
- * @author luisbenitez
+ * @author Luis Benitez
  */
 public class Punto implements IDesplazable {
     

@@ -18,8 +18,8 @@ public class JRango extends javax.swing.JFrame {
      */
     
     private static JRango p;
-    private static String sLimiteInf;
-    private static String sLimiteSup;
+    //private static String sLimiteInf;
+   // private static String sLimiteSup;
     
   //  private static float limiteInf;
    // private static float limiteSup;
@@ -204,20 +204,20 @@ public class JRango extends javax.swing.JFrame {
     private void jButtonCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCalcularActionPerformed
         // TODO add your handling code here:
         
-        sLimiteInf=limiteInferior.getText();
-        sLimiteSup=limiteSuperior.getText();
+        String sLimiteInf=limiteInferior.getText();
+        String sLimiteSup=limiteSuperior.getText();
         
         //etwas arbeitet nicht, finde den fehler spater
         if(isNumeric(sLimiteInf) && isNumeric(sLimiteSup)){ //fix this shit
             float limiteInf= Float.parseFloat(sLimiteInf);
             float limiteSup= Float.parseFloat(sLimiteSup);
-            
+            //System.out.println((limiteInf+limiteSup));
             ListaPoligonos rango= new ListaPoligonos();
-            rango.setPoligonos(listaDePoligonos.buscarPorRangoPerimetro(limiteInf, limiteInf).getPoligonos());
+            rango.setPoligonos(listaDePoligonos.buscarPorRangoPerimetro(limiteInf, limiteSup).getPoligonos());
             
-          //  ListaPoligonos wtf= new  ListaPoligonos();
+         //  ListaPoligonos wtf= new  ListaPoligonos();
         
-     //   wtf.setPoligonos(listp.buscarPorRangoPerimetro(6, 7).getPoligonos());
+       // wtf.setPoligonos(listaDePoligonos.buscarPorRangoPerimetro(limiteInf, limiteSup).getPoligonos());
         
             
             

@@ -13,8 +13,8 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 /**
- *
- * @author luisbenitez jajaja hadgdgdgdgd
+ * @author Edgar Araya
+ * @author Luis Benitez 
  */
 public class Main {
     

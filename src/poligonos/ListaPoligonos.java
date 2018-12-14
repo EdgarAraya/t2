@@ -92,6 +92,7 @@ public class ListaPoligonos {
         else{
             perimetro=this.poligonos.get(0).perimetro(); 
         }
+        
         for(Poligono p:this.poligonos){   
                 if (p.perimetro()==perimetro){
                     extremo.poligonos.add(p);

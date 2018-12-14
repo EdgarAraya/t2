@@ -162,9 +162,10 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -185,9 +186,9 @@
                   <Component id="jPanel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jPanel4" max="32767" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -220,7 +221,10 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jScrollPane1" alignment="0" pref="251" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="261" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
@@ -263,23 +267,19 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jButtonMostrarLista" linkSize="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButtonRangoPerimetro" linkSize="1" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jButtonColaterales" linkSize="1" alignment="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jToggleButton1" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="jButtonMenorPerimetro" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButtonMostrarPuntos" linkSize="1" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
-                          <Component id="jButtonCrearPoligonos" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButtonCrearRectas" linkSize="1" alignment="0" min="-2" pref="157" max="-2" attributes="0"/>
-                          <Component id="jButtonCrearSubPoligono" linkSize="1" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButtonPoligonoPorIndice" linkSize="1" alignment="0" min="-2" pref="185" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="2" attributes="0">
+                          <Component id="jButtonMostrarLista" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonMostrarPuntos" linkSize="1" alignment="2" min="-2" pref="157" max="-2" attributes="0"/>
+                          <Component id="jButtonCrearRectas" linkSize="1" alignment="2" min="-2" pref="157" max="-2" attributes="0"/>
+                          <Component id="jButtonCrearPoligonos" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonMenorPerimetro" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonCrearSubPoligono" linkSize="1" alignment="2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonPoligonoPorIndice" linkSize="1" alignment="2" min="-2" pref="185" max="-2" attributes="0"/>
+                          <Component id="jButtonRangoPerimetro" linkSize="1" alignment="2" max="32767" attributes="0"/>
+                          <Component id="jButtonColaterales" linkSize="1" alignment="2" max="32767" attributes="0"/>
+                          <Component id="jLabel1" alignment="2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -299,17 +299,14 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButtonMenorPerimetro" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jButtonRangoPerimetro" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                       <Component id="jButtonPoligonoPorIndice" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButtonRangoPerimetro" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jButtonColaterales" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jToggleButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="29" max="32767" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -388,21 +385,13 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonColateralesActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Mostrar wea"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="2"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;Tip: Para comenzar a usar el programa, cargue los &lt;br&gt;&#xa;puntos en la esquina superior izquierda, en el menu&lt;br&gt;&#xa;&quot;Puntos&quot;, puede cargarlos desde un directorio o &lt;br&gt;&#xa;usar los puntos por defecto del programa.&#xa;&lt;/html&gt;"/>
               </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JToggleButton" name="jToggleButton1">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="lista rectas"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jToggleButton1ActionPerformed"/>
-              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -420,15 +409,29 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="224" max="32767" attributes="0"/>
+                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel2">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="11" style="2"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;Cada opcion cumple la siguiente funcion: &lt;br&gt;&#xa;-Mostrar Lista de Pol&#xed;gonos: Muestra los pol&#xed;gonos&lt;br&gt; &#xa;de la colecci&#xf3;n de pol&#xed;gonos creados o de sub-pol&#xed;gonos.&lt;br&gt; &lt;br&gt;&#xa;-Mostrar Lista de Puntos: Muestra en la consola principal&lt;br&gt; &#xa;los puntos cargados actualmente.&lt;br&gt; &lt;br&gt;&#xa;-Crear Rectas: Crear rectas a partir de un punto inicial a final,&lt;br&gt;&#xa;usa los puntos cargados por el usuario.&lt;br&gt; &lt;br&gt;&#xa;-Crear Poligonos: Permite crear un pol&#xed;gono a partir de las rectas&lt;br&gt;&#xa;generadas por el usuario.&lt;br&gt; &lt;br&gt;&#xa;-Crear Sub-Pol&#xed;gono:Permite crear un sub-pol&#xed;gono a partir de los &lt;br&gt; &#xa;pol&#xed;gonos creados, se puede crear autom&#xe1;ticamente para todos o&lt;br&gt; &#xa;bien de manera manual.&lt;br&gt; &lt;br&gt;&#xa;-Lista de Menor/Mayor Perimetros: Muestra al usuario los pol&#xed;gonos con&lt;br&gt;&#xa;el menor o mayor per&#xed;metro, seg&#xfa;n elecci&#xf3;n.&lt;br&gt; &lt;br&gt;&#xa;-Mostrar Poligono Rango Perimetro: Muestra al usuario los pol&#xed;gonos con&lt;br&gt; &#xa;el per&#xed;metro que se encuentra dentro del rango ingresado.&lt;br&gt; &lt;br&gt;&#xa;-Mostrar Poligono poe Ind: Permite al usuario acceder a informaci&#xf3;n de un &lt;br&gt; &#xa;poligono determinado de la colecci&#xf3;n.&lt;br&gt; &lt;br&gt;&#xa;-Verificar Poligonos Colaterales: Permite al usuario averiguar si dos pol&#xed;gonos&lt;br&gt;&#xa;de la colecci&#xf3;n son colaterales (tienen al menos un lado en com&#xfa;n).&lt;br&gt; &lt;br&gt;&#xa;&#xa;&#xa;&#xa;&lt;/html&gt;"/>
+              </Properties>
+            </Component>
+          </SubComponents>
         </Container>
       </SubComponents>
     </Container>

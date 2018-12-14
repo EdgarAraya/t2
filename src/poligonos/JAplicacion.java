@@ -112,9 +112,9 @@ public class JAplicacion extends javax.swing.JFrame {
         jButtonPoligonoPorIndice = new javax.swing.JButton();
         jButtonRangoPerimetro = new javax.swing.JButton();
         jButtonColaterales = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        jLabel1 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu3 = new javax.swing.JMenu();
@@ -186,7 +186,9 @@ public class JAplicacion extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 251, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -259,19 +261,8 @@ public class JAplicacion extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("Mostrar wea");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        jToggleButton1.setText("lista rectas");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
+        jLabel1.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel1.setText("<html>\nTip: Para comenzar a usar el programa, cargue los <br>\npuntos en la esquina superior izquierda, en el menu<br>\n\"Puntos\", puede cargarlos desde un directorio o <br>\nusar los puntos por defecto del programa.\n</html>");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -279,21 +270,18 @@ public class JAplicacion extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(jButtonMostrarLista)
+                    .addComponent(jButtonMostrarPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCrearRectas, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButtonCrearPoligonos)
+                    .addComponent(jButtonMenorPerimetro)
+                    .addComponent(jButtonCrearSubPoligono)
+                    .addComponent(jButtonPoligonoPorIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButtonRangoPerimetro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonColaterales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jToggleButton1))
-                    .addComponent(jButtonMenorPerimetro)
-                    .addComponent(jButtonMostrarPuntos, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCrearPoligonos)
-                    .addComponent(jButtonCrearRectas, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonCrearSubPoligono)
-                    .addComponent(jButtonPoligonoPorIndice, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jButtonColaterales, jButtonCrearPoligonos, jButtonCrearRectas, jButtonCrearSubPoligono, jButtonMenorPerimetro, jButtonMostrarLista, jButtonMostrarPuntos, jButtonPoligonoPorIndice, jButtonRangoPerimetro});
@@ -314,29 +302,33 @@ public class JAplicacion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonMenorPerimetro)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonRangoPerimetro)
+                .addGap(11, 11, 11)
                 .addComponent(jButtonPoligonoPorIndice)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonRangoPerimetro)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonColaterales)
-                .addGap(24, 24, 24)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jToggleButton1))
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Información", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
+        jLabel2.setText("<html>\nCada opcion cumple la siguiente funcion: <br>\n-Mostrar Lista de Polígonos: Muestra los polígonos<br> \nde la colección de polígonos creados o de sub-polígonos.<br> <br>\n-Mostrar Lista de Puntos: Muestra en la consola principal<br> \nlos puntos cargados actualmente.<br> <br>\n-Crear Rectas: Crear rectas a partir de un punto inicial a final,<br>\nusa los puntos cargados por el usuario.<br> <br>\n-Crear Poligonos: Permite crear un polígono a partir de las rectas<br>\ngeneradas por el usuario.<br> <br>\n-Crear Sub-Polígono:Permite crear un sub-polígono a partir de los <br> \npolígonos creados, se puede crear automáticamente para todos o<br> \nbien de manera manual.<br> <br>\n-Lista de Menor/Mayor Perimetros: Muestra al usuario los polígonos con<br>\nel menor o mayor perímetro, según elección.<br> <br>\n-Mostrar Poligono Rango Perimetro: Muestra al usuario los polígonos con<br> \nel perímetro que se encuentra dentro del rango ingresado.<br> <br>\n-Mostrar Poligono poe Ind: Permite al usuario acceder a información de un <br> \npoligono determinado de la colección.<br> <br>\n-Verificar Poligonos Colaterales: Permite al usuario averiguar si dos polígonos<br>\nde la colección son colaterales (tienen al menos un lado en común).<br> <br>\n\n\n\n</html>");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 224, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -348,9 +340,9 @@ public class JAplicacion extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -393,9 +385,10 @@ public class JAplicacion extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -457,8 +450,8 @@ public class JAplicacion extends javax.swing.JFrame {
         
        // listaDePuntos= new ListaPuntos(); die punkte behalten
         
-        for (int i = 0; i < 3;i++){
-            for(int j=0; j < 3; j++){
+        for (int i = -2; i < 3;i++){
+            for(int j=-2; j < 3; j++){
                 Punto p1= new Punto((byte)i,(byte)j);
                 
                 listaDePuntos.agregarPunto(p1);
@@ -532,8 +525,20 @@ public class JAplicacion extends javax.swing.JFrame {
 
     private void jButtonMostrarPuntosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMostrarPuntosActionPerformed
         // TODO add your handling code here:
+        
+        if (listaDePuntos.getSize()>0){
+        
+        
         jTextAreaConsola.setText(listaDePuntos.toString());
         
+        
+        
+        }else{
+            
+            jTextAreaConsola.setText("No hay puntos cargados.\nPara cargar puntos acceda a la opción Puntos");
+            
+            
+        }
     }//GEN-LAST:event_jButtonMostrarPuntosActionPerformed
 
     private void jButtonCrearRectasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearRectasActionPerformed
@@ -577,25 +582,6 @@ public class JAplicacion extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButtonCrearSubPoligonoActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        
-        jTextAreaConsola.setText(""+listaDeRectas.convertirARectas(listaDePuntos));
-        
-        
-        
-        
-        
-      
-        
-        
-        
-        
-        
-      
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButtonMenorPerimetroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMenorPerimetroActionPerformed
         // TODO add your handling code here:
         mayor=true;
@@ -615,16 +601,6 @@ public class JAplicacion extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButtonRangoPerimetroActionPerformed
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-        
-        jTextAreaConsola.setText(listaDeRectas.toString());
-        
-        
-        
-        
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
 
     private void jButtonColateralesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonColateralesActionPerformed
         // TODO add your handling code here:
@@ -745,7 +721,6 @@ public class JAplicacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser fileChooser;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonColaterales;
     private javax.swing.JButton jButtonCrearPoligonos;
     private javax.swing.JButton jButtonCrearRectas;
@@ -758,6 +733,8 @@ public class JAplicacion extends javax.swing.JFrame {
     private javax.swing.JDialog jDialog1;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
@@ -773,6 +750,5 @@ public class JAplicacion extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea2;
     private javax.swing.JTextArea jTextAreaConsola;
     private javax.swing.JTextPane jTextPane1;
-    private javax.swing.JToggleButton jToggleButton1;
     // End of variables declaration//GEN-END:variables
 }

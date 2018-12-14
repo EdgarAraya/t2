@@ -21,7 +21,14 @@ public class Main {
     public static void main(String[] args) throws FileNotFoundException, IOException{
         
        // BufferedReader in = new BufferedReader(new FileReader("puntos.txt"));
+       
+       
+       JAplicacion start= new JAplicacion();
+       
+       start.setVisible(true);
         
+       
+       /*
         String content;
 
         content = new String(Files.readAllBytes(Paths.get("puntos.txt")));
@@ -127,19 +134,19 @@ public class Main {
 
         Poligono sub= p.getSubPoligono();
         
-        /*
+        
         System.out.println(sub);
         sub.desplazarEjeX((byte) (1));
         System.out.println(sub);
         sub.desplazarEjeY((byte) (1));
         System.out.println(sub);
-        */
-        /*
+      
+      
         System.out.println(p);
         p.desplazarEjeX((byte) 1);
         System.out.println(p);
         System.out.println("p sub:" +sub.perimetro()+"p orig: "+p.perimetro());
-        */
+      
         
         ListaPoligonos listp= new ListaPoligonos();
             
@@ -243,7 +250,7 @@ public class Main {
         
        System.out.println("e"+wtf);
         
-        
+        */
         
     }
     

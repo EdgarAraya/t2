@@ -29,9 +29,9 @@ public class Punto implements IDesplazable {
         this.y = y;
     }
     
-    /**
-     * Obtiene coordedna del eje x
-     * @return Retorna la coordenada en X del punto 
+     /**
+     * Obtiene coordedna del eje X
+     * @return Retorna la coordenada en Y del punto 
      */
     
     public byte getX() {
@@ -78,7 +78,7 @@ public class Punto implements IDesplazable {
     }
     
     /**
-     * Muestra atributos objeto tipo punto en String 
+     * Muestra atributos objeto tipo Punto en String 
      * @return puntos x e y en String 
      */
 
@@ -88,8 +88,8 @@ public class Punto implements IDesplazable {
     }
     
     /**
-     * Compara 2 puntos Dos puntos son iguales si tienen las mismas coordenadas
-     * @param p otro punto a comparar
+     * Redefinición del método de la clase Object
+     * @param o un objeto a comparar
      * @return true en caso de que sean iguales y false en caso contrario
      */
     
@@ -104,6 +104,13 @@ public class Punto implements IDesplazable {
         
         return false;
     }
+    
+     /**
+     * Compara 2 puntos, Dos puntos son iguales si tienen las mismas coordenadas
+     * @param p otro punto a comparar
+     * @return true en caso de que sean iguales y false en caso contrario
+     */
+    
     public boolean equals(Punto p){
         
     

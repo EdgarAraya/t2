@@ -8,15 +8,19 @@ package poligonos;
 import java.util.ArrayList;
 
 /**
- *@author Edgar Araya
- * @author luisbenitez
+ *Punto.java - Metodos y atributos que controlan una lista de rectas para un poligono
+ * @author Edgar Araya
+ * @author Luis Benitez
+ * @version 1.0
  */
 public class ListaRectas {
     
     private ArrayList<Recta>rectas;
 
     
-    
+    /**
+     * Constructor que crea rectas
+     */
     
     
     public ListaRectas() {
@@ -52,6 +56,11 @@ public class ListaRectas {
 
     }
 
+    /**
+     * Obtiene Rectas
+     * @return ArrayList de Rectas
+     */
+    
     public ArrayList<Recta> getRectas() {
         return rectas;
     }
@@ -59,6 +68,11 @@ public class ListaRectas {
     
     
     
+     /**
+     * Agrega una recta a la colección
+     * @param r, - nueva recta
+     * @return true, si la recta se agrga exitosamente, false, si no se agregó
+     */
     
     
     public boolean agregarRecta(Recta r){
@@ -72,13 +86,31 @@ public class ListaRectas {
         return false;
     }
     
+     /**
+     * Retorna el total de rectas existentes
+     * @return numero de rectas que existen
+     */
+    
+    
     public int totalRectas(){
         return this.rectas.size();
     }
     
+    /**
+     * Retorna la recta ubicada en la posición indicada
+     * @param index, - ubicación de la recta deseada
+     * @return recta
+     */
+    
+    
     public Recta buscarPorIndice(int index){
         return this.rectas.get(index);
     }
+    
+    /**
+     * Muestra atributos de coleccion de Rectas
+     * @return String de atributos de coleccion de Rectas 
+     */
     
     public String toString(){
         String datos="";

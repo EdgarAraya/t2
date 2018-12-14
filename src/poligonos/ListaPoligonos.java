@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 /**
- *Punto.java - Metodos y atributos que controlan una lista de poligonos
+ *ListaPoligonos.java - Metodos y atributos que controlan una lista de poligonos
  * @author Edgar Araya
  * @author Luis Benitez
  * @version 1.0

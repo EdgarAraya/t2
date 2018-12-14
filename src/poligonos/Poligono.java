@@ -8,7 +8,7 @@ package poligonos;
 import java.util.ArrayList;
 
 /**
- *Punto.java - Metodos y atributos que controlan un poligono
+ *Poligono.java - Metodos y atributos que controlan un poligono
  * @author Edgar Araya
  * @author Luis Benitez
  * @version 1.0

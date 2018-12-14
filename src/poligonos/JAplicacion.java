@@ -239,6 +239,11 @@ public class JAplicacion extends javax.swing.JFrame {
         });
 
         jButtonPoligonoPorIndice.setText("Mostrar Poligono por Ind.");
+        jButtonPoligonoPorIndice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonPoligonoPorIndiceActionPerformed(evt);
+            }
+        });
 
         jButtonRangoPerimetro.setText("Mostrar Poligono Rango Perimetro");
         jButtonRangoPerimetro.addActionListener(new java.awt.event.ActionListener() {
@@ -625,10 +630,10 @@ public class JAplicacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         if(listaDePoligonos.totalPoligonos()!=0 && listaPoligonosCargada){
-            System.out.println("test1");
+          //  System.out.println("test1");
             //JColaterales.getInstance().getjPoligono1().removeAllItems();//fix out of bounds
             
-            System.out.println("test2");
+           // System.out.println("test2");
             
             
             for (int i = 0; i < listaDePoligonos.totalPoligonos();i++){
@@ -643,7 +648,7 @@ public class JAplicacion extends javax.swing.JFrame {
             
             
             
-            System.out.println("test3");
+           // System.out.println("test3");
            // JColaterales.getInstance().getjPoligono2().removeAllItems();//fix out of bounds
             for (int i = 0; i < listaDePoligonos.totalPoligonos();i++){
 
@@ -655,7 +660,7 @@ public class JAplicacion extends javax.swing.JFrame {
                  }
             }
             
-            System.out.println("test4");
+         
         
         }
         JColaterales.getInstance().setVisible(true);
@@ -669,6 +674,33 @@ public class JAplicacion extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButtonColateralesActionPerformed
+
+    private void jButtonPoligonoPorIndiceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonPoligonoPorIndiceActionPerformed
+        // TODO add your handling code here:
+         if(listaDePoligonos.totalPoligonos()!=0 && listaPoligonosCargada){
+          
+   
+            for (int i = 0; i < listaDePoligonos.totalPoligonos();i++){
+
+                 if ( JIndice.getInstance().getjPoligonos().getItemAt(i) == null )//parche 
+                     
+                 {
+                    JIndice.getInstance().getjPoligonos().addItem("Poligono "+(i+1));
+                 }
+               
+            
+        
+            }
+        
+        
+         }
+        
+        
+        
+        
+        
+        JIndice.getInstance().setVisible(true);
+    }//GEN-LAST:event_jButtonPoligonoPorIndiceActionPerformed
 
     
     

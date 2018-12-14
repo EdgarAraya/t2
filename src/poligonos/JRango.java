@@ -21,8 +21,8 @@ public class JRango extends javax.swing.JFrame {
     private static String sLimiteInf;
     private static String sLimiteSup;
     
-    private static float limiteInf;
-    private static float limiteSup;
+  //  private static float limiteInf;
+   // private static float limiteSup;
     
     
     
@@ -209,10 +209,19 @@ public class JRango extends javax.swing.JFrame {
         
         //etwas arbeitet nicht, finde den fehler spater
         if(isNumeric(sLimiteInf) && isNumeric(sLimiteSup)){ //fix this shit
-            limiteInf= Float.parseFloat(sLimiteInf);
-            limiteSup= Float.parseFloat(sLimiteSup);
+            float limiteInf= Float.parseFloat(sLimiteInf);
+            float limiteSup= Float.parseFloat(sLimiteSup);
+            
             ListaPoligonos rango= new ListaPoligonos();
             rango.setPoligonos(listaDePoligonos.buscarPorRangoPerimetro(limiteInf, limiteInf).getPoligonos());
+            
+          //  ListaPoligonos wtf= new  ListaPoligonos();
+        
+     //   wtf.setPoligonos(listp.buscarPorRangoPerimetro(6, 7).getPoligonos());
+        
+            
+            
+            
             
             
             jTextAreaConsola.setText("Poligonos dentro del rango "+limiteInf+" a "+limiteSup+"\n"+

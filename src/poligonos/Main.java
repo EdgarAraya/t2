@@ -237,7 +237,11 @@ public class Main {
         
         System.out.println(triangulo.addLinea(test1));
         
-       System.out.println(listp.buscarPorRangoPerimetro(6, 6));
+        ListaPoligonos wtf= new  ListaPoligonos();
+        
+        wtf.setPoligonos(listp.buscarPorRangoPerimetro(6, 7).getPoligonos());
+        
+       System.out.println("e"+wtf);
         
         
         

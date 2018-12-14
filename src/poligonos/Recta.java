@@ -201,7 +201,8 @@ public class Recta implements IDesplazable {
             
             return this.puntoInicial.getX()==otra.puntoInicial.getX() && this.puntoInicial.getY()==otra.puntoInicial.getY() && 
               this.puntoFinal.getX()==otra.puntoFinal.getX() && this.puntoFinal.getY()==otra.puntoFinal.getY();
-      
+                    
+                  
         }
         return false;
     }

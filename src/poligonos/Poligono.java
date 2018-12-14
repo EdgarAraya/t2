@@ -68,7 +68,8 @@ public class Poligono implements IOperaciones, Comparable<Poligono> {
     public boolean verificarLinea(Recta candidata){
         
         return (this.lineas.get(this.lineas.size()-1).getPuntoFinal().equals(candidata.getPuntoInicial()) &&
-                this.lineas.get(this.lineas.size()-1).calcularAngulo(candidata)!=180);
+                this.lineas.get(this.lineas.size()-1).calcularAngulo(candidata)!=180 &&
+                this.lineas.get(this.lineas.size()-1).calcularAngulo(candidata)!=0);//test
         
         
     }

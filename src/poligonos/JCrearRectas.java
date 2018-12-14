@@ -26,6 +26,12 @@ public class JCrearRectas extends javax.swing.JFrame {
         }
         return p;
     }
+
+    public static void setCargado(boolean cargado) {
+        JCrearRectas.cargado = cargado;
+    }
+    
+    
     
     
     
@@ -53,6 +59,8 @@ public class JCrearRectas extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jConsola = new javax.swing.JTextArea();
+
+        setTitle("Creador de Rectas");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Opciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
@@ -172,6 +180,8 @@ public class JCrearRectas extends javax.swing.JFrame {
     private void jButtonCargarRectasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargarRectasActionPerformed
         if(!cargado && listaDePuntos.getSize()!=0){  // agregar en JAplicacion validacion para cargado si se cambian los puntos cargados.
             cargado=true;
+            
+            JAplicacion.listaPuntosCargada=true;
             jConsola.setText("Puntos cargados con exito");
             
             
@@ -191,8 +201,8 @@ public class JCrearRectas extends javax.swing.JFrame {
 
     private void jButtonCrearRectasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCrearRectasActionPerformed
        
-        
-        if (listaDePuntos.getSize()!=0){
+       
+        if (listaDePuntos.getSize()>0 && cargado){
             
             int n = jComboPuntoInicial.getSelectedIndex();
             int n2 =jComboPuntoFinal.getSelectedIndex();
@@ -200,6 +210,8 @@ public class JCrearRectas extends javax.swing.JFrame {
 
             if(listaDeRectas.agregarRecta(uno)){
                 jConsola.setText("Recta "+uno.toString()+" agregada con exito.");
+                //testeo boolean
+                JAplicacion.listaRectasCargada=true;
             }
             else{
                 jConsola.setText("Recta no se puede agregar");

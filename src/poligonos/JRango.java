@@ -80,6 +80,7 @@ public class JRango extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Perimetro por Rango");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parametros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12)))); // NOI18N
 
@@ -206,14 +207,20 @@ public class JRango extends javax.swing.JFrame {
         sLimiteInf=limiteInferior.getText();
         sLimiteSup=limiteSuperior.getText();
         
-        
-        if(isNumeric(sLimiteInf) && isNumeric(sLimiteSup)){
+        //etwas arbeitet nicht, finde den fehler spater
+        if(isNumeric(sLimiteInf) && isNumeric(sLimiteSup)){ //fix this shit
             limiteInf= Float.parseFloat(sLimiteInf);
             limiteSup= Float.parseFloat(sLimiteSup);
+            ListaPoligonos rango= new ListaPoligonos();
+            rango.setPoligonos(listaDePoligonos.buscarPorRangoPerimetro(limiteInf, limiteInf).getPoligonos());
+            
+            
             jTextAreaConsola.setText("Poligonos dentro del rango "+limiteInf+" a "+limiteSup+"\n"+
                     
-                    listaDePoligonos.buscarPorRangoPerimetro(limiteInf, limiteInf).toString());
-            
+                    "Total: "+ rango.totalPoligonos()
+                    
+                    +"\n"+rango.toString());
+            System.out.println(rango);
             
         }
         else{

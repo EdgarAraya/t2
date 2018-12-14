@@ -106,7 +106,7 @@ public class Main {
         
         
         
-        System.out.println(p);
+       // System.out.println(p);
         
         p.addLinea(r1);
         p.addLinea(r2);
@@ -236,6 +236,10 @@ public class Main {
         
         
         System.out.println(triangulo.addLinea(test1));
+        
+       System.out.println(listp.buscarPorRangoPerimetro(6, 6));
+        
+        
         
     }
     

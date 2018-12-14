@@ -186,7 +186,7 @@ public class Poligono implements IOperaciones, Comparable<Poligono> {
         
         
         if(this.esCerrado()){
-            datos+=" Es Regular: ";
+            datos+="\nEs Regular: ";
 
             if(this.esRegular())
                 datos+="Si";

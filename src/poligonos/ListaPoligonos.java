@@ -20,6 +20,10 @@ public class ListaPoligonos {
         return poligonos;
     }
 
+    public void setPoligonos(ArrayList<Poligono> poligonos) {
+        this.poligonos = poligonos;
+    }
+
     
     
     
@@ -101,11 +105,13 @@ public class ListaPoligonos {
     }
     
     public String toString(){
-        String datos="Poligonos en la lista:";
+        String datos="";
+        //datos+="Poligonos en la lista:";//Optional
+        
         int i=1;
         for(Poligono p:this.poligonos){
             datos+="\n*Poligono "+i+"*";
-            datos+=p.toString();
+            datos+=p.toString()+"\n";
             i++;
         }
         return datos;

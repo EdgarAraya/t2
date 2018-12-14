@@ -75,6 +75,7 @@ public class JCrearPoligono extends javax.swing.JFrame {
         jPoligonosCargados = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Creador de Poligonos");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Parametros", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
@@ -221,7 +222,7 @@ public class JCrearPoligono extends javax.swing.JFrame {
 
     private void jCrearPoligonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCrearPoligonoActionPerformed
         // TODO add your handling code here:
-        if (cargado){
+        if (cargado && JAplicacion.listaPuntosCargada){
             Poligono nuevo = new Poligono();
 
             int ind =jRectaInicial.getSelectedIndex();
@@ -248,7 +249,7 @@ public class JCrearPoligono extends javax.swing.JFrame {
                             poligono= new Poligono();
                         }
                         else{
-                        
+                         JAplicacion.listaPoligonosCargada=true;
                         listaDePoligonos.agregarPoligono(poligono);
                          jPoligonosCargados.setText(poligono.toString()+"\nEl poligono esta cerrado.");
                          jConsola.setText("Poligono creado con exito, ingrese nuevas rectas para crear nuevo poligono");
@@ -300,17 +301,20 @@ public class JCrearPoligono extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         //Achtung
-        jRectaInicial.removeAllItems();
-        
-        cargado=true;
-         for(int i=0; i< listaDeRectas.totalRectas();i++){
-             
-            
-             
-            jRectaInicial.addItem(listaDeRectas.getRectas().get(i).toString());
-           // jRectaFinal.addItem(listaDeRectas.getRectas().get(i).toString());
+        if(JAplicacion.listaRectasCargada){
+            jRectaInicial.removeAllItems();
+
+            cargado=true;//old code
+             for(int i=0; i< listaDeRectas.totalRectas();i++){
+
+
+
+                jRectaInicial.addItem(listaDeRectas.getRectas().get(i).toString());
+               // jRectaFinal.addItem(listaDeRectas.getRectas().get(i).toString());
+            }
         }
-         
+        
+        
          
          
         

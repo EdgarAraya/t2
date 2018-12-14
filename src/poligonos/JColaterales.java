@@ -62,6 +62,7 @@ public class JColaterales extends javax.swing.JFrame {
         jProbar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Verificador Colateral");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Poligono", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
 
@@ -174,7 +175,7 @@ public class JColaterales extends javax.swing.JFrame {
 
     private void jPoligono2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPoligono2ActionPerformed
         // TODO add your handling code here:
-        
+        if(JAplicacion.listaPoligonosCargada)
         jConsolaPoligono2.setText(listaDePoligonos.getPoligonos().get(jPoligono2.getSelectedIndex()).toString());
         
         
@@ -184,7 +185,7 @@ public class JColaterales extends javax.swing.JFrame {
 
     private void jPoligono1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPoligono1ActionPerformed
         // TODO add your handling code here:
-        
+        if(JAplicacion.listaPoligonosCargada)
         jConsolaPoligono.setText(listaDePoligonos.getPoligonos().get(jPoligono1.getSelectedIndex()).toString());
         
         
@@ -195,6 +196,10 @@ public class JColaterales extends javax.swing.JFrame {
 
     private void jProbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jProbarActionPerformed
         // TODO add your handling code here:
+        
+        if(JAplicacion.listaPoligonosCargada){
+        
+        
         if (listaDePoligonos.getPoligonos().get(jPoligono1.getSelectedIndex()).sonColaterales(listaDePoligonos.getPoligonos().get(jPoligono2.getSelectedIndex()))){
             
             jColaterales.setText("Si");
@@ -203,7 +208,7 @@ public class JColaterales extends javax.swing.JFrame {
         }else{
             jColaterales.setText("No");
         }
-        
+        }
         
         
     }//GEN-LAST:event_jProbarActionPerformed

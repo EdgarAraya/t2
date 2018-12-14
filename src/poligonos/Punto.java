@@ -31,7 +31,7 @@ public class Punto implements IDesplazable {
     
      /**
      * Obtiene coordedna del eje X
-     * @return Retorna la coordenada en Y del punto 
+     * @return Retorna la coordenada en X del punto 
      */
     
     public byte getX() {
@@ -39,7 +39,7 @@ public class Punto implements IDesplazable {
     }
 
      /**
-     * Obtiene coordedna del eje y
+     * Obtiene coordedna del eje Y
      * @return Retorna la coordenada en Y del punto 
      */
     

@@ -48,7 +48,7 @@ public class Recta implements IDesplazable {
         return puntoFinal;
     }
     /**
-     * Retorna la longitud del segmento representado por la línea
+     * Retorna la longitud del segmento representado por la recta
      * @return longitud de la recta
      */
     
